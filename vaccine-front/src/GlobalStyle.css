@@ -1,0 +1,9 @@
+body {
+  background-image: url('./images/hospital.jpg');
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
