@@ -1,6 +1,6 @@
 package com.soni.vaccinessys.controller;
 
-import com.soni.vaccinessys.model.Vaccine;
+import com.soni.vaccinessys.model.VaccineRegistry;
 import com.soni.vaccinessys.service.VaccineRegistryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,14 +16,14 @@ public class VaccineRegistryController {
     private VaccineRegistryService vaccineRegistryService;
 
     @PostMapping("/add")
-    public String add(@RequestBody Vaccine vaccine) {
-        vaccineRegistryService.saveVaccine(vaccine);
+    public String add(@RequestBody VaccineRegistry vaccineRegistry) {
+        vaccineRegistryService.saveVaccineRegistry(vaccineRegistry);
         return "New Vaccine registry added";
     }
 
     @GetMapping("/getAll")
-    public List<Vaccine> getAllVaccines() {
-        return vaccineRegistryService.getAllVaccines();
+    public List<VaccineRegistry> getAllVaccines() {
+        return vaccineRegistryService.getAllVaccineRegistries();
     }
 
 }

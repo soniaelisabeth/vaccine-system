@@ -1,12 +1,13 @@
 package com.soni.vaccinessys.service;
 
 import com.soni.vaccinessys.model.Vaccine;
+import com.soni.vaccinessys.model.VaccineRegistry;
 
 import java.util.List;
 
 public interface VaccineRegistryService {
-    public Vaccine saveVaccine(Vaccine vaccine);
+    public VaccineRegistry saveVaccineRegistry(VaccineRegistry vaccineRegistry);
 
-    public List<Vaccine> getAllVaccines();
+    public List<VaccineRegistry> getAllVaccineRegistries();
 
 }
