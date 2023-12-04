@@ -6,16 +6,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Vaccine {
+public class VaccineRegistry {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
-    public String name;
-    public String subtipo;
-    public String idade;
-    public String doses;
-    public String intervaloEntreDoses;
+    public String childName;
+    public String vaccineName;
+    public String document;
+    public String date;
+    public String doctor;
+    public String unidade;
 
-    public Vaccine() {
+    public VaccineRegistry() {
     }
 }

@@ -1,29 +1,29 @@
 package com.soni.vaccinessys.controller;
 
 import com.soni.vaccinessys.model.Vaccine;
-import com.soni.vaccinessys.service.VaccineService;
+import com.soni.vaccinessys.service.VaccineRegistryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/vaccine")
+@RequestMapping("/vaccineRegistry")
 @CrossOrigin
-public class VaccineController {
+public class VaccineRegistryController {
 
     @Autowired
-    private VaccineService vaccineService;
+    private VaccineRegistryService vaccineRegistryService;
 
     @PostMapping("/add")
     public String add(@RequestBody Vaccine vaccine) {
-        vaccineService.saveVaccine(vaccine);
-        return "New Vaccine added";
+        vaccineRegistryService.saveVaccine(vaccine);
+        return "New Vaccine registry added";
     }
 
     @GetMapping("/getAll")
     public List<Vaccine> getAllVaccines() {
-        return vaccineService.getAllVaccines();
+        return vaccineRegistryService.getAllVaccines();
     }
 
 }

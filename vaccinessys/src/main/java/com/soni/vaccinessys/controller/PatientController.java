@@ -23,7 +23,7 @@ public class PatientController {
 
     @PostMapping("/update")
     public String updatePatient(@RequestBody Patient patient) {
-        patientService.savePatient(patient);
+        patientService.updatePatient(patient);
         return "Patient updated";
     }
 

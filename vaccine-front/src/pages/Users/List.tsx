@@ -18,14 +18,16 @@ export default function List() {
           />
         </Box>
         <Box sx={{ alignSelf: "center" }}>
-          <Button
-            component={RouterLink}
-            to="/users/new"
-            variant="contained"
-            startIcon={<PersonAddAltIcon />}
-          >
-            Novo Usuário
-          </Button>
+          <div style={{ marginTop: '65px' }}>
+            <Button
+              component={RouterLink}
+              to="/users/new"
+              variant="contained"
+              startIcon={<PersonAddAltIcon />}
+            >
+              Novo Usuário
+            </Button>
+          </div>
         </Box>
       </Stack>
       <Paper>
