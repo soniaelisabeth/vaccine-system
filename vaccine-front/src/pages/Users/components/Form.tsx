@@ -59,8 +59,29 @@ export default function Form() {
       setUsers(newUsers)
     }
     
+    updateDb(data)
     setShowSuccessPopup(true)
     clearValues()
+  }
+
+  const updateDb = (data: User) => {
+    const formattedDate = data.birthDate.toLocaleDateString("pt-BR", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
+    let newData = data
+    newData.birthDate = formattedDate
+
+    console.log(data)
+    fetch("http://localhost:8090/patient/add",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify(newData)
+
+  }).then(()=>{
+    console.log("Paciente Registrado com Sucesso!")
+  })
   }
 
   const clearValues = () => {
