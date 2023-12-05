@@ -8,10 +8,10 @@ public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String fullName;
+    private String birthDate;
     private String document;
-    private Date birthDate;
     private String mobile;
+    private String name;
     private String responsible;
 
     public Patient() {

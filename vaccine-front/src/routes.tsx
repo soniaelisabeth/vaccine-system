@@ -6,7 +6,8 @@ import UserEdit from "./pages/Users/Edit"
 import UserList from "./pages/Users/List"
 import Appbar from "./pages/Appbar"
 import Login from "./pages/Login"
-import VaccineLog from "./pages/VaccineLog"
+import VaccineRegistry from "./pages/VaccineRegistry"
+import Vaccine from "./pages/Vaccine"
 import AdminPanel from "./pages/AdminPanel"
 
 export function AppRoutes() {
@@ -22,7 +23,8 @@ export function AppRoutes() {
       <Route path="/login">
         <Route path="/login" element={<Login />} />
         <Route path="/login/adminPanel" element={<AdminPanel />} />
-        <Route path="/login/adminPanel/vaccineLog" element={<VaccineLog />} />
+        <Route path="/login/adminPanel/vaccine" element={<Vaccine />} />
+        <Route path="/login/adminPanel/vaccineRegistry" element={<VaccineRegistry />} />
       </Route>
     </Routes></>
   )

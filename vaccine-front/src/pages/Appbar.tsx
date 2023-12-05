@@ -40,7 +40,7 @@ export default function Appbar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" style={{ backgroundColor: '#1976d2' }}  >
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             Carteira de Vacinação

@@ -14,7 +14,7 @@ public interface PatientRepository extends JpaRepository<Patient, Integer> {
     @Query("UPDATE Patient p " +
             "SET p.birthDate = :#{#patient.birthDate}, " +
             "p.document = :#{#patient.document}, " +
-            "p.fullName = :#{#patient.fullName}, " +
+            "p.name = :#{#patient.name}, " +
             "p.mobile = :#{#patient.mobile}, " +
             "p.responsible = :#{#patient.responsible} " +
             "WHERE p.id = :#{#patient.id}")
