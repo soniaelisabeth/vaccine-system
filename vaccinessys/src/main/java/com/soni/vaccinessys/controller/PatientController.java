@@ -21,12 +21,6 @@ public class PatientController {
         return "New patient added";
     }
 
-    @PostMapping("/update")
-    public String updatePatient(@RequestBody Patient patient) {
-        patientService.updatePatient(patient);
-        return "Patient updated";
-    }
-
     @GetMapping("/getAll")
     public List<Patient> getAllPatients() { return patientService.getAllPatients(); }
 

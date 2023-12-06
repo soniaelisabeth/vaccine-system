@@ -9,14 +9,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PatientRepository extends JpaRepository<Patient, Integer> {
-
-    @Modifying
-    @Query("UPDATE Patient p " +
-            "SET p.birthDate = :#{#patient.birthDate}, " +
-            "p.document = :#{#patient.document}, " +
-            "p.name = :#{#patient.name}, " +
-            "p.mobile = :#{#patient.mobile}, " +
-            "p.responsible = :#{#patient.responsible} " +
-            "WHERE p.id = :#{#patient.id}")
-    Patient updatePatient(@Param("patient") Patient patient);
 }

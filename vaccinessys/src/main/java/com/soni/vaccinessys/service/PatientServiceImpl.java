@@ -11,16 +11,11 @@ import java.util.List;
 public class PatientServiceImpl implements PatientService {
 
     @Autowired
-    private PatientRepository patientRepository;
+    public PatientRepository patientRepository;
 
     @Override
     public Patient savePatient(Patient patient) {
         return patientRepository.save(patient);
-    }
-
-    @Override
-    public Patient updatePatient(Patient patient) {
-        return patientRepository.updatePatient(patient);
     }
 
     @Override

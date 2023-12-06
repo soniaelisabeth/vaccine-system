@@ -1,5 +1,8 @@
-// AdminPanel.js
-import { Button, Container, Grid, Typography } from '@mui/material';
+import { Button, Container, Grid, Typography, Paper, Avatar } from '@mui/material';
+import PeopleIcon from '@mui/icons-material/People';
+import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
+import AssignmentIcon from '@mui/icons-material/Assignment';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { useNavigate } from 'react-router-dom';
 
 const AdminPanel = () => {
@@ -17,21 +20,43 @@ const AdminPanel = () => {
     navigate('/login/adminPanel/vaccineRegistry');
   };
 
+  const administratorImageUrl = 'https://conteudo.imguol.com.br/c/entretenimento/2d/2018/11/12/stan-lee-1542063577369_v2_450x450.jpg'
+
   return (
     <Container>
-      <Grid container justifyContent="center" alignItems="center" style={{ height: '50vh' }}>
+      <Paper elevation={3} style={{ padding: '20px', marginTop: '20px' }}>
+        <Avatar alt="Administrator" src={administratorImageUrl} sx={{ width: 100, height: 100, marginBottom: '20px' }} />
+        <Typography variant="h4" align="left" style={{ marginBottom: '15px' }}>
+          Bem vindo Dr. Stan Lee
+          <ArrowDropDownIcon style={{ fontSize: '2rem' }} />
+        </Typography>
+        <Typography variant="h7" align="left" style={{ marginBottom: '20px' }}>
+          drstanlee@gov.br
+        </Typography>
+        <div>
+        <Button variant="contained" color="primary" style={{ marginRight: '10px', marginTop: '20px' }}>
+          Conta
+        </Button>
+        <Button variant="contained" color="primary" style={{ marginRight: '10px', marginTop: '20px' }}>
+          Logout
+        </Button>
+        </div>
+      </Paper>
+      <Grid container spacing={3} justifyContent="center">
+        <Grid item xs={12} md={4}>
           <Button
             variant="contained"
             color="primary"
             size="large"
             fullWidth
-            style={{ padding: '20px', fontSize: '1.5rem', marginTop: '20px' }}
+            style={{ padding: '20px', fontSize: '1.5rem', marginTop: '40px' }}
             onClick={navigateToPatients}
           >
+            <PeopleIcon style={{ fontSize: '3rem', marginBottom: '10px' }} />
             <Typography variant="h4">Pacientes</Typography>
-            <span role="img" aria-label="Patients Icon" style={{ fontSize: '2rem' }}>
-            </span>
           </Button>
+        </Grid>
+        <Grid item xs={12} md={4}>
           <Button
             variant="contained"
             color="primary"
@@ -40,10 +65,11 @@ const AdminPanel = () => {
             style={{ padding: '20px', fontSize: '1.5rem' }}
             onClick={navigateToVaccinesRegistry}
           >
+            <LocalHospitalIcon style={{ fontSize: '3rem', marginBottom: '10px' }} />
             <Typography variant="h4">Aplicação de Vacinas</Typography>
-            <span role="img" aria-label="Register Vaccines Icon" style={{ fontSize: '2rem' }}>
-            </span>
           </Button>
+        </Grid>
+        <Grid item xs={12} md={4}>
           <Button
             variant="contained"
             color="primary"
@@ -52,11 +78,11 @@ const AdminPanel = () => {
             style={{ padding: '20px', fontSize: '1.5rem' }}
             onClick={navigateToVaccines}
           >
+            <AssignmentIcon style={{ fontSize: '3rem', marginBottom: '10px' }} />
             <Typography variant="h4">Registro de Vacinas</Typography>
-            <span role="img" aria-label="Apply Vaccines Icon" style={{ fontSize: '2rem' }}>
-            </span>
           </Button>
         </Grid>
+      </Grid>
     </Container>
   );
 };

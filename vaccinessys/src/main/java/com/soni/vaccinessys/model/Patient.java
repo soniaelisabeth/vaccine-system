@@ -7,12 +7,12 @@ import java.util.Date;
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String birthDate;
-    private String document;
-    private String mobile;
-    private String name;
-    private String responsible;
+    public Long id;
+    public String birthDate;
+    public String document;
+    public String mobile;
+    public String name;
+    public String responsible;
 
     public Patient() {
     }

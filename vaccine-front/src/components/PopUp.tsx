@@ -19,8 +19,18 @@ function PaperComponent(props: PaperProps) {
   );
 }
 
-export default function PopUp() {
+export default function PopUp({ dialog }) {
+  return <PopUp1 dialog={dialog} />;
+}
+
+export function PopUp1({ dialog }) {
   const [open, setOpen] = React.useState(true);
+  let text
+  if (typeof dialog !== 'string') {
+    text = 'Paciente registrado com sucesso. Fique atento ao WhatsApp para novas informações.'
+  } else {
+    text = String(dialog)
+  }
 
   const handleClose = () => {
     setOpen(false);
@@ -39,7 +49,7 @@ export default function PopUp() {
         </DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Paciente registrado com sucesso. Fique atento ao WhatsApp para novas informações.
+          {text}
           </DialogContentText>
         </DialogContent>
         <DialogActions>

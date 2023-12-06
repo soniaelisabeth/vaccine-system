@@ -70,8 +70,13 @@ export default function Form() {
       month: "2-digit",
       year: "numeric",
     });
-    let newData = data
-    newData.birthDate = formattedDate
+    const newData = {
+      name: data.fullName,
+      document: data.document,
+      birthDate: formattedDate,
+      mobile: data.mobile,
+      responsible: data.responsible
+    }
 
     console.log(data)
     fetch("http://localhost:8090/patient/add",{
