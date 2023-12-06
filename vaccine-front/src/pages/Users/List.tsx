@@ -12,9 +12,11 @@ export default function List() {
     <>
       <Stack direction={{ xs: "column", sm: "row" }} gap={1} mb={2}>
         <Box sx={{ flexGrow: 1 }}>
-          <PageTitle title="Lista" />
+          <div style={{ marginTop: '10px' }}>
+            <PageTitle title="Pacientes Cadastrados"/>
+          </div>
           <Breadcrumbs
-            path={[{ label: "Pacientes", to: "/users" }, { label: "Lista" }]}
+            path={[{ label: "Pacientes", to: "/users" }, { label: "Pacientes Cadastrados" }]}
           />
         </Box>
         <Box sx={{ alignSelf: "center" }}>

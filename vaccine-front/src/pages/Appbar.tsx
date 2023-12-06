@@ -47,7 +47,7 @@ export default function Appbar() {
           </Typography>
 
           {/* Home Icon */}
-          <IconButton color="inherit" aria-label="home" onClick={() => handleNavigation('dashboard')}>
+          <IconButton color="inherit" aria-label="home" onClick={() => handleNavigation('dashboard')} disabled>
             <HomeIcon />
           </IconButton>
 
@@ -56,7 +56,7 @@ export default function Appbar() {
             <VaccinesIcon />
           </IconButton>
           
-          <IconButton color="inherit" aria-label="login" onClick={() => handleNavigation('signin')}>
+          <IconButton color="inherit" aria-label="login" onClick={() => handleNavigation('signin')} disabled>
             <LoginIcon />
           </IconButton>
           

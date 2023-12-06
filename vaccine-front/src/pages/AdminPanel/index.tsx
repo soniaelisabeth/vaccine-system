@@ -39,16 +39,16 @@ const AdminPanel = () => {
           drstanlee@gov.br
         </Typography>
         <div>
-        <Button variant="contained" color="primary" style={{ marginRight: '10px', marginTop: '20px' }}>
-          Conta
-        </Button>
-        <Button variant="contained" color="primary" style={{ marginRight: '10px', marginTop: '20px' }}>
-          Logout
-        </Button>
+          <Button variant="contained" color="primary" style={{ marginRight: '10px', marginTop: '20px' }}>
+            Conta
+          </Button>
+          <Button variant="contained" color="primary" style={{ marginRight: '10px', marginTop: '20px' }}>
+            Logout
+          </Button>
         </div>
       </Paper>
       <Grid container spacing={3} justifyContent="center">
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} md={6}>
           <Button
             variant="contained"
             color="primary"
@@ -61,20 +61,20 @@ const AdminPanel = () => {
             <Typography variant="h4">Pacientes</Typography>
           </Button>
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} md={6}>
           <Button
             variant="contained"
             color="primary"
             size="large"
             fullWidth
-            style={{ padding: '20px', fontSize: '1.5rem' }}
+            style={{ padding: '20px', fontSize: '1.5rem',  marginTop: '40px' }}
             onClick={navigateToPacientReport}
           >
             <AssignmentIndIcon style={{ fontSize: '3rem', marginBottom: '10px' }} />
             <Typography variant="h4">Ficha do Paciente</Typography>
           </Button>
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} md={6}>
           <Button
             variant="contained"
             color="primary"
@@ -87,7 +87,7 @@ const AdminPanel = () => {
             <Typography variant="h4">Aplicação de Vacinas</Typography>
           </Button>
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} md={6}>
           <Button
             variant="contained"
             color="primary"

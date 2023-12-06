@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { Container, Paper, Button} from '@material-ui/core';
 import { useNavigate } from 'react-router-dom';
+import Face4Icon from '@mui/icons-material/Face4';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,7 +30,10 @@ export default function Login() {
 
     <Container>
         <Paper elevation={3} style={paperStyle}>
-        <h1 style={{ color: "blue", textDecorationLine: "none" }}>Login</h1>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <Face4Icon style={{ fontSize: '3rem', marginBottom: '10px', textAlign: 'center' }} />
+        </div>
+        <h1 style={{ color: "black", textDecorationLine: "none", textAlign: "center" }}>Login</h1>
 
     <form className={classes.root} noValidate autoComplete="off">
     

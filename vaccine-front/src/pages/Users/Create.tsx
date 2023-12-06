@@ -9,7 +9,9 @@ export default function Create() {
   return (
     <>
       <Stack sx={{ marginBottom: 2 }}>
-        <PageTitle title="Criar Novo Usuário" />
+        <div style={{ marginTop: '10px' }}>
+          <PageTitle title="Criar Novo Usuário" />
+        </div>
         <Breadcrumbs
           path={[{ label: "Pacientes", to: "/users/" }, { label: "Novo" }]}
         />

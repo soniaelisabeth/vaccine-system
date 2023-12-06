@@ -1,26 +1,55 @@
 import { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Container, Paper} from '@material-ui/core';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
+import { IconButton, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
+import WhatsAppIcon from "@mui/icons-material/WhatsApp"
 
-const renderStatus = (patient, vaccine, vaccinesRegistry) => {
+const onCall = (number: string) => {
+  if (!number) return
+
+  window.location.href = `https://wa.me/55${number.replace(
+    /[^\d]+/g,
+    ""
+  )}`
+}
+
+const renderStatus = (patient: never, vaccine: never, vaccinesRegistry: any[]) => {
     const doses = vaccine.doses || 'UNICA'
     let counterDose = 0
-    let isLate
 
-    vaccinesRegistry.map((registry) => {
+    vaccinesRegistry.map((registry: { childName: any; vaccineName: any; }) => {
         if (registry.childName === patient.name && registry.vaccineName === vaccine.name) {
             counterDose += 1;
         }
       });
     
+      if ((counterDose === 1 && doses === 'UNICA') || doses === counterDose) {
+        return <span style={{ color: "green" }}>EM DIA</span>;
+      } else if (counterDose === 0) {
+        const zap = <span 
+        style={{ color: "red" }}>EM ATRASO
+        <IconButton
+            color="success"
+            size="small"
+            onClick={() => onCall(patient.mobile)}
+          >
+        <WhatsAppIcon fontSize="inherit" />
+        </IconButton>
+        </span>;
+
+        return zap
+      } else {
+        return <span style={{ color: "orange" }}>PENDENTE</span>;
+      }
+    
+    
 }
 
-const renderDoses = (childName, vaccine, vaccinesRegistry) => {
+const renderDoses = (childName: any, vaccine: never, vaccinesRegistry: any[]) => {
     const doses = vaccine.doses || 'UNICA';
     let counterDose = 0;
   
-    vaccinesRegistry.map((registry) => {
+    vaccinesRegistry.map((registry: { childName: any; vaccineName: any; }) => {
       if (registry.childName === childName && registry.vaccineName === vaccine.name) {
         counterDose += 1;
       }
@@ -92,7 +121,7 @@ useEffect(()=>{
   .then(res=>res.json())
   .then((result)=>{
     console.log(result)
-    setPatients(result)
+    setPatients(result.sort((a: { name: string; }, b: { name: any; }) => a.name.localeCompare(b.name)))
   }
 )
 },[])
@@ -101,7 +130,7 @@ useEffect(()=>{
 
     <Container>
     <Paper elevation={1} style={paperStyle}>
-    <h1 style={{ color: "blue", textDecorationLine: "none" }}>Ficha do Paciente</h1>
+    <h1 style={{ color: "black", textDecorationLine: "none" }}>Ficha do Paciente</h1>
     {patients.map((patient) => (
         <Paper elevation={6} style={paperStyle} key={patient.id}>
           <Typography variant="h6">Nome: {patient.name}</Typography>
@@ -122,7 +151,7 @@ useEffect(()=>{
                   <TableRow key={vaccine}>
                     <TableCell>{vaccine.name + ' ' + vaccine.subtipo}</TableCell>
                     <TableCell>{renderDoses(patient.name, vaccine, vaccinesRegistry)}</TableCell>
-                    <TableCell>{renderDoses(patient, vaccine, vaccinesRegistry)}</TableCell>
+                    <TableCell>{renderStatus(patient, vaccine, vaccinesRegistry)}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>

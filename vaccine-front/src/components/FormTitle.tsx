@@ -6,7 +6,7 @@ interface FormTitleProps {
 
 export default function FormTitle({ title }: FormTitleProps) {
   return (
-    <div style={{ backgroundColor: 'white',  display: 'inline-block' }}>
+    <div style={{ backgroundColor: 'white',  display: 'inline' }}>
       <Typography color="text.primary" variant="h6" sx={{ marginBottom: 2 }}>
         {title}
       </Typography>

@@ -6,7 +6,7 @@ interface PageTitleProps {
 
 export default function PageTitle({ title }: PageTitleProps) {
   return (
-    <div style={{ backgroundColor: 'white', borderRadius: '5px', padding: '5px'}}>
+    <div style={{ backgroundColor: 'white', borderRadius: '5px', padding: '5px', display: 'inline'}}>
       <Typography color="text.primary" variant="h5" style={{ display: 'inline-block' }}>
         {title}
       </Typography>

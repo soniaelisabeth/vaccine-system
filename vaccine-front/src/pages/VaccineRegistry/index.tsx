@@ -124,7 +124,7 @@ useEffect(()=>{
 
     <Container>
         <Paper elevation={3} style={paperStyle}>
-        <h1 style={{ color: "blue", textDecorationLine: "none" }}>Aplicação de Vacinas</h1>
+        <h1 style={{ color: "black", textDecorationLine: "none" }}>Aplicação de Vacinas</h1>
 
     <form className={classes.root} noValidate autoComplete="off">
       <InputLabel id="test-select-label">Pacientes</InputLabel>
@@ -177,7 +177,7 @@ useEffect(()=>{
     </Paper>
 
     <Paper elevation={1} style={paperStyle}>
-    <h1 style={{ color: "blue", textDecorationLine: "none" }}>Vacinas Recentes</h1>
+    <h1 style={{ color: "black", textDecorationLine: "none" }}>Vacinas Recentes</h1>
     {vaccinesRegistry.map((vac) => (
         <Paper elevation={6} style={paperStyle} key={vac.id}>
           <Typography variant="h6">{vac.childName}</Typography>

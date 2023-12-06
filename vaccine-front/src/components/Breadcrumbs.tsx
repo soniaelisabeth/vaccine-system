@@ -18,7 +18,7 @@ export default function Breadcrumbs({ path }: BreadcrumbProps) {
       <div style={{ backgroundColor: 'white', borderRadius: '5px', padding: '5px', display: 'inline-block'}}>
         <MaterialBreadcrumbs aria-label="breadcrumb">
           <Link underline="hover" color="inherit" component={RouterLink} to="/">
-            Dashboard
+            Painel do Administrador
           </Link>
 
           {path.map((item, index) =>
