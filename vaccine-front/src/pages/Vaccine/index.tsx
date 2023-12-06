@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { Container, Paper, Button} from '@material-ui/core';
 import { Typography } from '@mui/material';
+import PopUp from '../../components/PopUp';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,7 +23,15 @@ export default function Vaccine() {
     const[intervaloEntreDoses,setIntervaloEntreDoses]=useState('')
     const [vaccines, setVaccines] = useState([])
     const classes = useStyles();
+    const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
+  const clearValues = () => {
+    setName('');
+    setSubtipo('');
+    setIdade('');
+    setDoses('');
+    setIntervaloEntreDoses('');
+  }
   const handleClick=(e: { preventDefault: () => void; })=>{
     e.preventDefault()
     const vaccineForm = {
@@ -41,6 +50,8 @@ export default function Vaccine() {
   }).then(()=>{
     console.log("Vacina Registrada com Sucesso!")
   })
+  setShowSuccessPopup(true)
+  clearValues()
 }
 
 useEffect(()=>{
@@ -100,6 +111,7 @@ useEffect(()=>{
         </Paper>
       ))}
     </Paper>
+    {showSuccessPopup && <PopUp dialog='Nova vacina registrada com sucesso!'/>} 
     </Container>
   );
 }

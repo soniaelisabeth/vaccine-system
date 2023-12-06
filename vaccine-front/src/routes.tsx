@@ -9,6 +9,7 @@ import Login from "./pages/Login"
 import VaccineRegistry from "./pages/VaccineRegistry"
 import Vaccine from "./pages/Vaccine"
 import AdminPanel from "./pages/AdminPanel"
+import PacientReport from "./pages/PacientReport"
 
 export function AppRoutes() {
   return (
@@ -25,6 +26,7 @@ export function AppRoutes() {
         <Route path="/login/adminPanel" element={<AdminPanel />} />
         <Route path="/login/adminPanel/vaccine" element={<Vaccine />} />
         <Route path="/login/adminPanel/vaccineRegistry" element={<VaccineRegistry />} />
+        <Route path="/login/adminPanel/pacientReport" element={<PacientReport />} />
       </Route>
     </Routes></>
   )
