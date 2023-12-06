@@ -3,6 +3,7 @@ import PeopleIcon from '@mui/icons-material/People';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import { useNavigate } from 'react-router-dom';
 
 const AdminPanel = () => {
@@ -18,6 +19,10 @@ const AdminPanel = () => {
 
   const navigateToVaccinesRegistry = () => {
     navigate('/login/adminPanel/vaccineRegistry');
+  };
+  
+  const navigateToPacientReport = () => {
+    navigate('/login/adminPanel/pacientReport');
   };
 
   const administratorImageUrl = 'https://conteudo.imguol.com.br/c/entretenimento/2d/2018/11/12/stan-lee-1542063577369_v2_450x450.jpg'
@@ -54,6 +59,19 @@ const AdminPanel = () => {
           >
             <PeopleIcon style={{ fontSize: '3rem', marginBottom: '10px' }} />
             <Typography variant="h4">Pacientes</Typography>
+          </Button>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <Button
+            variant="contained"
+            color="primary"
+            size="large"
+            fullWidth
+            style={{ padding: '20px', fontSize: '1.5rem' }}
+            onClick={navigateToPacientReport}
+          >
+            <AssignmentIndIcon style={{ fontSize: '3rem', marginBottom: '10px' }} />
+            <Typography variant="h4">Ficha do Paciente</Typography>
           </Button>
         </Grid>
         <Grid item xs={12} md={4}>
