@@ -4,14 +4,13 @@ import { Container, Paper} from '@material-ui/core';
 import { IconButton, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
 import WhatsAppIcon from "@mui/icons-material/WhatsApp"
 
-const onCall = (number: string) => {
-  if (!number) return
+const onCall = (number, message) => {
+  if (!number) return;
+  const cleanedNumber = number.replace(/[^\d]+/g, "");
+  const whatsappLink = `https://wa.me/55${cleanedNumber}?text=${encodeURIComponent(message || 'Hello!')}`;
+  window.location.href = whatsappLink;
+};
 
-  window.location.href = `https://wa.me/55${number.replace(
-    /[^\d]+/g,
-    ""
-  )}`
-}
 
 const renderStatus = (patient: never, vaccine: never, vaccinesRegistry: any[]) => {
     const doses = vaccine.doses || 'UNICA'
@@ -31,7 +30,10 @@ const renderStatus = (patient: never, vaccine: never, vaccinesRegistry: any[]) =
         <IconButton
             color="success"
             size="small"
-            onClick={() => onCall(patient.mobile)}
+            onClick={() => onCall(
+              patient.mobile,
+              ' https://www.gov.br/saude/pt-br/vacinacao Está na hora da vacina do seu filho! Certifique-se de que seu filho receba a primeira dose aos 2 meses, a segunda dose aos 4 meses e a terceira dose aos 6 meses. Os intervalos entre as doses são de 60 dias, e os reforços são administrados 30 dias após a terceira dose da Penta e 30 dias após a primeira dose do reforço.'
+              )}
           >
         <WhatsAppIcon fontSize="inherit" />
         </IconButton>
